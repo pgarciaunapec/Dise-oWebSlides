@@ -545,7 +545,7 @@ export default function App() {
                 />
 
                 {/* Etiqueta Flotante */}
-                <div className="absolute bottom-12 right-12 z-20 bg-black/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl max-w-sm">
+                <div className="absolute top-12 right-12 z-20 bg-black/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl max-w-sm">
                   <div className="flex items-center gap-3 mb-2">
                     <Maximize2 size={16} className="text-blue-400" />
                     <span className="text-xs font-bold uppercase text-slate-300">
