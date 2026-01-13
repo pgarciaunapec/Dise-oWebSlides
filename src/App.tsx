@@ -197,7 +197,7 @@ const slides = [
   {
     id: 5,
     type: "content",
-    title: "Características de Calidad",
+    title: "Características del Ambiente de Desarrollo Web",
     speaker: "Cristofer De La Mota",
     image:
       "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=2000",
