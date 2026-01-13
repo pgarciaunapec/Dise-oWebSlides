@@ -49,36 +49,36 @@ const slides = [
       {
         id: 1,
         role: "Expositor #1",
-        name: "Nombre del Alumno",
-        matricula: "ID: XXXXXX",
+        name: "Roberto Marte",
+        matricula: "A00115040",
         icon: <Monitor size={24} />,
       },
       {
         id: 2,
         role: "Expositor #2",
-        name: "Nombre del Alumno",
-        matricula: "ID: XXXXXX",
+        name: "Carlos Yael De Los Santos",
+        matricula: "A00121730",
         icon: <Server size={24} />,
       },
       {
         id: 3,
         role: "Expositor #3",
-        name: "Nombre del Alumno",
-        matricula: "ID: XXXXXX",
+        name: "Marcos Javier Colón Rosario",
+        matricula: "A00120607",
         icon: <Code size={24} />,
       },
       {
         id: 4,
         role: "Expositor #4",
-        name: "Nombre del Alumno",
-        matricula: "ID: XXXXXX",
+        name: "Cristofer De La Mota",
+        matricula: "A00122561",
         icon: <ShieldCheck size={24} />,
       },
       {
         id: 5,
         role: "Expositor #5",
-        name: "Nombre del Alumno",
-        matricula: "ID: XXXXXX",
+        name: "Pedro García",
+        matricula: "A00121080",
         icon: <Users size={24} />,
       },
     ],
@@ -87,7 +87,7 @@ const slides = [
     id: 2,
     type: "content",
     title: "El Ciclo de los Entornos",
-    speaker: "Expositor 1",
+    speaker: "Roberto Marte",
     image:
       "https://images.unsplash.com/photo-1607799275518-d58665d096c1?auto=format&fit=crop&q=80&w=2000",
     objective:
@@ -127,7 +127,7 @@ const slides = [
     id: 3,
     type: "content",
     title: "Componentes del Ambiente",
-    speaker: "Expositor 2",
+    speaker: "Carlos Yael De Los Santos",
     image:
       "https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80&w=2000",
     objective: "Anatomía técnica: Hardware, Software y Stack Tecnológico.",
@@ -166,7 +166,7 @@ const slides = [
     id: 4,
     type: "content",
     title: "Herramientas: Local vs Nube",
-    speaker: "Expositor 3",
+    speaker: "Marcos Javier Colón Rosario",
     image:
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000",
     objective: "Evolución del espacio de trabajo: De la PC al Cloud Computing.",
@@ -198,7 +198,7 @@ const slides = [
     id: 5,
     type: "content",
     title: "Características de Calidad",
-    speaker: "Expositor 4",
+    speaker: "Cristofer De La Mota",
     image:
       "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=2000",
     objective: "Atributos no funcionales que definen la excelencia técnica.",
@@ -230,7 +230,7 @@ const slides = [
     id: 6,
     type: "content",
     title: "Funciones Diarias",
-    speaker: "Expositor 5",
+    speaker: "Pedro García",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000",
     objective: "Operaciones críticas: De la maquetación al mantenimiento.",
@@ -267,8 +267,7 @@ const slides = [
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000",
     icon: <Globe className="w-20 h-20 text-green-400" />,
-    extraText:
-      "Un entorno de desarrollo bien configurado elimina el caos, asegura la calidad y permite que Frontend y Backend trabajen en perfecta armonía.",
+    extraText: `"Un entorno de desarrollo bien configurado elimina el caos, asegura la calidad y permite que Frontend y Backend trabajen en perfecta armonía."`,
   },
 ];
 
@@ -430,10 +429,15 @@ export default function App() {
               </div>
               <div className="relative z-20 text-center max-w-5xl px-6">
                 <div className="flex justify-center mb-8">{slide.icon}</div>
-                <h1 className="text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h1 className="text-6xl text-white font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   {slide.title}
                 </h1>
-                <p className="text-2xl text-slate-300">{slide.subtitle}</p>
+                <p className="text-2xl text-white mb-6">{slide.subtitle}</p>
+                {(slide as any).extraText && (
+                  <p className="text-lg text-white/80 italic mb-8">
+                    {(slide as any).extraText}
+                  </p>
+                )}
                 <button
                   onClick={handleNext}
                   className="mt-12 bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 mx-auto transition-transform hover:scale-105"
@@ -563,8 +567,8 @@ export default function App() {
       </div>
 
       {/* Controles de Navegación */}
-      <div className="absolute bottom-0 w-full z-40 px-8 py-6 flex justify-between items-center pointer-events-none">
-        <div className="pointer-events-auto flex gap-4 ml-auto bg-slate-950/50 backdrop-blur-md p-2 rounded-full border border-slate-700">
+      <div className="absolute bottom-0 w-full z-40 px-8 py-6 flex justify-between items-center pointer-events-none group">
+        <div className="pointer-events-auto flex gap-4 ml-auto bg-slate-950/50 backdrop-blur-md p-2 rounded-full border border-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button
             onClick={handlePrev}
             className="p-4 bg-slate-800 hover:bg-slate-700 rounded-full text-white transition-all hover:scale-105"
